@@ -1,7 +1,7 @@
 {
   "name": "obsidian-fanboard",
   "version": "0.1.0",
-  "description": "Fanwork utilities for Obsidian (https://obsidian.md)",
+  "description": "Plugin to add fanwork utilities to Obsidian (https://obsidian.md)",
   "homepage": "https://github.com/toridoriv/obsidian-fanboard",
   "author": {
     "name": "Victoria Rodriguez",
