@@ -6,7 +6,7 @@
     ]
   },
   "fmt": {
-    "exclude": ["dist/"],
+    "exclude": ["dist/", "node_modules/"],
     "useTabs": false,
     "indentWidth": 2,
     "lineWidth": 80,
@@ -15,9 +15,16 @@
     "proseWrap": "always"
   },
   "lint": {
-    "exclude": ["dist/"],
+    "exclude": ["dist/", "node_modules/"],
     "rules": {
       "tags": ["recommended"]
     }
-  }
+  },
+  "scopes": {
+    "source/": {
+      "obsidian": "npm:obsidian",
+      "change-case": "npm:change-case"
+    }
+  },
+  "nodeModulesDir": false
 }
