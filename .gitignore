@@ -1,2 +1,10 @@
-# 💬 Configuration file for the version manager `asdf`.
+# 💬 Configuration files
 !.tool-versions
+
+# 💬 Distribution files
+dist
+example/vault/.obsidian/plugins/fanboard/*
+!example/vault/.obsidian/plugins/fanboard/.gitkeep
+
+# 💬 Dependencies
+node_modules

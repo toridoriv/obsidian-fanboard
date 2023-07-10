@@ -16,7 +16,13 @@
     "url": "https://github.com/toridoriv/obsidian-fanboard/issues",
     "email": "vrodriguezfe@icloud.com"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "./scripts/build.ts",
+    "build:dev": "npm run build -- --watch",
+    "cache": "deno cache --lock-write ./scripts/manage.ts",
+    "manage": "./scripts/manage.ts",
+    "chmod": "find ./scripts -name '*.ts' -not -name '*_*' -exec chmod +x {} +"
+  },
   "keywords": [],
   "license": "MPL-2.0",
   "config": {
