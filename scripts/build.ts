@@ -40,6 +40,7 @@ async function runBuild(options: BuildOptions) {
     nodeResolve(),
     esbuildTransformPlugin(),
     generateManifestPlugin(),
+    copyAssetsPlugin(),
     generateExamplePlugin(),
   );
 
@@ -140,6 +141,26 @@ function generateManifestPlugin(): RollupModule.Plugin {
     name: "generate-manifest",
     generateBundle() {
       this.debug("Generating manifest...");
+      this.emitFile(asset);
+    },
+  };
+}
+
+function copyAssetsPlugin(): RollupModule.Plugin {
+  const stylesPath = packageJson.config.input.assets.dir +
+    packageJson.config.output.assets.styles;
+
+  const asset: RollupModule.EmittedAsset = {
+    type: "asset",
+    name: "styles",
+    fileName: packageJson.config.output.assets.styles,
+    source: Deno.readTextFileSync(stylesPath),
+  };
+
+  return {
+    name: "copy-assets",
+    generateBundle() {
+      this.debug("Copying assets");
       this.emitFile(asset);
     },
   };

@@ -1,0 +1,15 @@
+.fanboard-plugin .modal .modal-content input {
+  display: inline-block;
+  margin-top: 2px;
+  min-width: 84%;
+}
+
+.fanboard-plugin .modal .modal-content label {
+  display: block;
+  font-size: 0.8em;
+}
+
+.fanboard-plugin .modal .modal-content label span {
+  display: inline-block;
+  min-width: 10%;
+}
