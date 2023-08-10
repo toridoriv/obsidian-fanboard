@@ -2,17 +2,17 @@
 
 import { Command, packageJson } from "./_deps.ts";
 import { build } from "./build.ts";
+import { transpile } from "./transpile.ts";
 
 // deno-lint-ignore ban-types
 export type ManageOptions = {};
 
 export const manage = new Command<void, void, ManageOptions>()
   .name("manage")
-  .description(
-    `Command line utility to handle the scripts of ${packageJson.name}.`,
-  )
+  .description(`Command line utility to handle the scripts of ${packageJson.name}.`)
   .action(runManage)
-  .command(build.getName(), build);
+  .command(build.getName(), build)
+  .command(transpile.getName(), transpile);
 
 function runManage(this: Command<void, void, ManageOptions>) {
   this.showHelp();
