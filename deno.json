@@ -1,33 +1,56 @@
 {
   "compilerOptions": {
-    "lib": [
-      "deno.window",
-      "deno.unstable",
-      "dom",
-      "dom.iterable"
-    ]
+    "checkJs": false,
+    "lib": ["deno.window", "deno.unstable", "dom", "dom.iterable"],
+    "strictNullChecks": true
   },
+  "exclude": ["dist/", "example/", "vendor/"],
   "fmt": {
-    "exclude": ["dist/", "node_modules/"],
     "useTabs": false,
     "indentWidth": 2,
-    "lineWidth": 80,
+    "lineWidth": 90,
     "semiColons": true,
     "singleQuote": false,
     "proseWrap": "always"
   },
   "lint": {
-    "exclude": ["dist/", "node_modules/"],
     "rules": {
       "tags": ["recommended"],
-      "exclude": ["no-empty-interface"]
+      "exclude": [
+        "no-empty-interface",
+        "no-namespace",
+        "no-this-alias",
+        "no-var"
+      ]
     }
   },
+  "imports": {},
   "scopes": {
     "source/": {
-      "obsidian": "npm:obsidian",
-      "change-case": "npm:change-case"
+      "obsidian": "npm:obsidian@1.4.0",
+      "zod": "./vendor/zod.js",
+      "chai": "./vendor/chai.js",
+      "dexie": "./vendor/dexie.js",
+      "@core": "./source/core/main.ts",
+      "@database": "./source/store/database.ts",
+      "@ratings": "./source/ratings/main.ts",
+      "@components": "./source/ui/components/main.ts"
+    },
+    "tests/": {
+      "@source/": "./source/",
+      "@tools": "./tests/tools.ts",
+      "bdd": "https://deno.land/std@0.196.0/testing/bdd.ts"
     }
   },
-  "nodeModulesDir": false
+  "nodeModulesDir": false,
+  "tasks": {
+    "build": "./scripts/build.ts",
+    "build:dev": "deno task build --watch",
+    "manage": "./scripts/manage.ts",
+    "chmod": "find ./scripts -name '*.ts' -not -name '*_*' -exec chmod +x {} +",
+    "coverage": "rm -rf .coverage && deno test -A --location='http://deno.test' --coverage=.coverage && deno coverage --exclude='\\.test\\.|\\.js$|tests' .coverage --lcov --output=.coverage/profile.lcov && genhtml -o .coverage/html .coverage/profile.lcov",
+    "test": "deno test -A --location='http://deno.test'",
+    "cache": "deno cache --lock-write source/deps.ts && deno cache --lock-write scripts/_deps.ts && deno cache --lock-write source/tests/deps.ts"
+  },
+  "lock": "deno-lock.json"
 }

@@ -1,1 +1,3 @@
-export { Fanboard as default } from "./fanboard.ts";
+import "./globals.ts";
+
+export { Fanboard as default } from "./plugin.ts";
