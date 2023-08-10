@@ -1,0 +1,47 @@
+{
+  "$metadata": {
+    "language": {
+      "name": "Spanish",
+      "code": "es"
+    }
+  },
+  "common": {
+    "form": {
+      "create": "Agregar {{entity}}",
+      "edit": "Editar {{entity}}",
+      "list": "Lista de {{entity}}",
+      "required_field": "* indica un campo obligatorio"
+    },
+    "button": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "update": "Actualizar"
+    },
+    "validation_error": {
+      "gte": "Por favor ingrese un valor mayor que {{min_value}}",
+      "lte": "Por favor ingrese un valor menor que {{max_value}}",
+      "min_length": "Por favor ingrese al menos {{min_length}} caracteres",
+      "required": "Este campo es obligatorio"
+    }
+  },
+  "ratings": {
+    "attributes": {
+      "description": {
+        "example": "El contenido puede ser inapropiado para audiencias menores de 13 años.",
+        "summary": "Breve explicación de la adecuación del contenido para esta clasificación."
+      },
+      "level": {
+        "example": "4",
+        "summary": "Valor numérico del 1 al 5. 1 significa 'sin restricciones', 5 indica 'contenido explícito'."
+      },
+      "name": {
+        "example": "Audiencia adolescente en adelante",
+        "summary": "Un nombre único para tu clasificación."
+      }
+    },
+    "collection": "clasificaciones",
+    "label": "clasificación",
+    "summary": "Clasificaciones de contenido de tus fanworks de acuerdo a su nivel de explicites."
+  }
+}

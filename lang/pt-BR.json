@@ -1,0 +1,47 @@
+{
+  "$metadata": {
+    "language": {
+      "name": "Brazilian Portuguese",
+      "code": "pt-BR"
+    }
+  },
+  "common": {
+    "form": {
+      "create": "Adicionar {{entity}}",
+      "edit": "Editar {{entity}}",
+      "list": "Lista de {{entity}}",
+      "required_field": "* indica um campo obrigatório"
+    },
+    "button": {
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "delete": "Excluir",
+      "update": "Atualizar"
+    },
+    "validation_error": {
+      "gte": "Por favor, insira um valor maior que {{min_value}}",
+      "lte": "Por favor, insira um valor menor que {{max_value}}",
+      "min_length": "Por favor, insira pelo menos {{min_length}} caracteres",
+      "required": "Este campo é obrigatório"
+    }
+  },
+  "ratings": {
+    "attributes": {
+      "description": {
+        "example": "O conteúdo pode ser inadequado para audiências menores de 13 anos.",
+        "summary": "Breve explicação sobre a adequação do conteúdo para esta classificação."
+      },
+      "level": {
+        "example": "4",
+        "summary": "Valor numérico de 1 a 5. 1 significa 'sem restrições', 5 indica 'conteúdo explícito.'"
+      },
+      "name": {
+        "example": "Audiência Adolescente e Adulta",
+        "summary": "Um nome único para a sua classificação."
+      }
+    },
+    "collection": "classificações",
+    "label": "classificação",
+    "summary": "Classificações de conteúdo do seus fanworks de acordo com o nível de explicitação."
+  }
+}
